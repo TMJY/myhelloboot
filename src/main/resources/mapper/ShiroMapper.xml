@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xr.springboot.dao.ShiroDao">
+    <!-- 根据用户名查找用户 -->
+    <select id="getUserByUsername" parameterType="java.lang.String" resultType="com.xr.springboot.pojo.User">
+		select * from user where username=#{username} and status=1
+	</select>
+
+    <!-- 查询用户所有角色 -->
+    <select id="listRoles" parameterType="java.lang.String" resultType="java.lang.String">
+		select r.name from user u INNER JOIN user_role ur on u.user_id = ur.user_id INNER JOIN role r
+		on r.role_id=ur.role_id   where u.username=#{username} and u.status=1 and r.status=1
+	</select>
+
+    <!-- 查询用户所有权限,返回值是权限名集合 -->
+    <select id="listPermissions" parameterType="java.lang.String" resultType="java.lang.String">
+		select p.perms from user u INNER JOIN user_role ur on u.user_id = ur.user_id INNER JOIN role r on r.role_id=ur.role_id
+INNER JOIN role_permission rp on r.role_id = rp.role_id INNER JOIN permission p on p.permission_id=rp.permission_id
+where u.username=#{username} and u.status=1 and r.status=1 and p.status=1
+	</select>
+
+	<select id="queryAllStudent" resultType="com.xr.springboot.pojo.Student">
+        select * from student
+	</select>
+
+
+
+</mapper>
