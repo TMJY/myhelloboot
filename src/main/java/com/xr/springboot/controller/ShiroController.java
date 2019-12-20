@@ -52,8 +52,7 @@ public class ShiroController {
              */
             subject.login(token);
             System.out.println("认证成功:" + subject.isAuthenticated());
-
-
+            
             return "success";
 
         } catch (AuthenticationException e) {
