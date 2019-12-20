@@ -52,6 +52,7 @@ public class StudentController {
         }
 
         session.setAttribute("students",students);
+
         return "query";
     }
 
