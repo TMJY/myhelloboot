@@ -52,10 +52,7 @@ public class StudentController {
         }
 
         session.setAttribute("students",students);
-        System.out.println("书画");
-        System.out.println("书画");
-        System.out.println("书画");
-        System.out.println("书画");
+
         return "query";
     }
 
