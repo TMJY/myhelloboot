@@ -50,6 +50,7 @@ public class StudentController {
             //存入内存
             jedisCache.setArrayList("students",students,60*5);
         }
+        System.out.println("琴棋书画无所不能");
         session.setAttribute("students",students);
         return "query";
     }
