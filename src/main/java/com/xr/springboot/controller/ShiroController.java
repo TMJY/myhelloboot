@@ -55,6 +55,7 @@ public class ShiroController {
 
             System.out.println("书画社");
             System.out.println("书画社2");
+            System.out.println("书画社3");
             return "success";
 
         } catch (AuthenticationException e) {
