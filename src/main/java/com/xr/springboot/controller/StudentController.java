@@ -51,6 +51,7 @@ public class StudentController {
             jedisCache.setArrayList("students",students,60*5);
         }
         session.setAttribute("students",students);
+        System.out.println("工商银行招新啦！！！！！！！");
         return "query";
     }
 
