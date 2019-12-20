@@ -52,12 +52,7 @@ public class ShiroController {
              */
             subject.login(token);
             System.out.println("认证成功:" + subject.isAuthenticated());
-
-            System.out.println("书画社");
-            System.out.println("书画社2");
-            System.out.println("书画社3");
-            System.out.println("书画社4");
-            System.out.println("书画社5");
+            
             return "success";
 
         } catch (AuthenticationException e) {
