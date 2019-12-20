@@ -28,7 +28,7 @@ import java.util.Set;
  * @since 1.0.0
  */
 @Repository
-public interface ShiroDao {
+public interface     ShiroDao {
     /**
      * 根据用户名查找用户
      */
