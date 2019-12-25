@@ -55,8 +55,7 @@ public class MyRealm extends AuthorizingRealm {
         System.out.println("来授权了");
         //获取用户名
         String username = (String)principals.getPrimaryPrincipal();
-        System.out.println("username==" +
-                "============"+username);
+        System.out.println("username=============="+username);
         //new一个授权信息
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         //给授权信息设置角色集合,只能放角色名
