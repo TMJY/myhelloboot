@@ -14,7 +14,7 @@ mybatis:
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
-#配置redis
+
 
 
 #配置访问html
@@ -32,7 +32,7 @@ spring:
     mode: HTML5
     cache: false
 
-
+  #配置redis
   redis:
       host: 47.96.144.120
       port: 6379

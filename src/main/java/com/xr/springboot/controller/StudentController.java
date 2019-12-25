@@ -41,14 +41,14 @@ public class StudentController {
     @RequestMapping("/query")
     public String role(HttpSession session){
         List<Student> students =null;
-        Boolean ifExists = jedisCache.exists("students");
+        Boolean ifExists = jedisCache.exists("com.xr.springboot.controller.StudentController.role");
         if(ifExists){
-            students = jedisCache.getArraylist("students",Student.class);
+            students = jedisCache.getArraylist("com.xr.springboot.controller.StudentController.role",Student.class);
             /*students = jedisCache.getArraylist("students", Student.class);*/
         }else{
             students = shiroService.queryAllStudent();
             //存入内存
-            jedisCache.setArrayList("students",students,60*5);
+            jedisCache.setArrayList("com.xr.springboot.controller.StudentController.role",students,60*5);
         }
 
         session.setAttribute("students",students);
